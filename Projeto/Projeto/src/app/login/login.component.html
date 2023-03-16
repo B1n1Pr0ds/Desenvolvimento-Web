@@ -1,14 +1,14 @@
 <form>
     <div class="mb-3">
       <label for="Login" class="form-label">Login</label>
-      <input [(ngModel)] = "usuario" type="text" class="form-control" id="login" aria-describedby="emailHelp">
+      <input [(ngModel)]="usuario" type="text" class="form-control" id="login" aria-describedby="emailHelp">
     </div>
     <div class="mb-3">
       <label for="Senha" class="form-label">Senha</label>
-      <input [(ngModel)] = "senha" type="password" class="form-control" id="Senha">
+      <input [(ngModel)]="senhausuario" type="password" class="form-control" id="senhausuario">
     </div> 
-    <button type="button" (click) = "AdmLogin()" class="btn btn-primary">Login</button>
+    <button class="btn btn-primary" type="button" (click) = "admLogin()" class="btn btn-primary">Login</button>
     <p>
         {{login}}
     </p>
-  </form>
+</form>

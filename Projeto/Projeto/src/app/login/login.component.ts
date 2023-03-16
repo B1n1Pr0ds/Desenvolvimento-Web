@@ -7,24 +7,23 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-  usuario: string="";
-  senha: string="";
-  login: string="";
+  usuario: string = "";
+  senhausuario: string = "";
+  login: string = "";
 
   
-  constructor ( private router: Router ) {}
-  
-  AdmLogin()
-  {
-    if (this.usuario == "admin" && this.senha == "umdoistres") 
+  constructor (private router: Router){}
+  admLogin(){
+    if(this.usuario == "admin" && this.senhausuario == "123")
     {
-      this.router.navigate(['/home']);
+        this.router.navigate(['/home']);
     }
-    else
-    {
-      this.login = "Usuário ou senha inválido";
-    }
-   }
+      else
+      {
+        this.login = "Usuario ou senha invalido";
+      }
+  } 
+  }
 
 
-}
+
