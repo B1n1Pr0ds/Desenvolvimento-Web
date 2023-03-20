@@ -1,3 +1,3 @@
 <ul class="list-group">
-    <li [ngStyle] = "{'background-color': tarefa.concluido ? 'green' : 'red', 'text-decoration': tarefa.concluido ? 'line-through' : 'none'}" *ngFor = "let tarefa of Tarefas" class="list-group-item">{{tarefa.descricao}} - {{tarefa.concluido}}</li>   
+    <li [ngStyle] = "{'background-color': tarefa.concluido ? 'green' : 'red', 'text-decoration': tarefa.concluido ? 'line-through' : 'none'}" *ngFor = "let tarefa of Tarefas" class="list-group-item"><a>{{tarefa.descricao}} - {{tarefa.concluido}} <button *ngIf = "!tarefa.concluido" type="button" (click) = "tarefa.concluido = !tarefa.concluido" class="btn btn-primary">Tarefa Concluída!</button></a></li>  
 </ul>
