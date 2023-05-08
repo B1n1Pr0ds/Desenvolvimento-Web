@@ -1,0 +1,31 @@
+
+    <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+      <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
+        <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
+        <span class="fs-4">Simple header</span>
+      </a>
+
+      <ul *ngIf="autenticado;else blocoElse" class="nav nav-pills">
+        <li *ngFor="let item of menus;index as i;first as f" class="nav-item">
+          <a routerLink="{{item.url}}" 
+          routerLinkActive="active" 
+          class="nav-link " 
+          aria-current="page">{{i}} - {{item.descricao}} {{f}}</a>
+        </li>
+       </ul>
+
+      <ng-template #blocoElse>
+        <ul class="nav nav-pills">
+          <li class="nav-item">
+            <a (click)="autenticado=!autenticado" class="nav-link active">Autenticar</a>
+          </li>
+        </ul>
+      </ng-template>
+
+     <!-- <ul *ngIf="!autenticado" class="nav nav-pills">
+        <li class="nav-item">
+          <a (click)="autenticado=!autenticado" class="nav-link active">Autenticar</a>
+        </li>
+      </ul>-->
+    </header>
+  

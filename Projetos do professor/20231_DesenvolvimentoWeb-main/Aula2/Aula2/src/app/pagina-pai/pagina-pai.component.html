@@ -1,0 +1,30 @@
+<div class="alert"
+[ngClass]="{' alert-success': sucesso,' alert-danger':!sucesso}" 
+role="alert">
+Mensagem Teste  
+</div>
+
+<div class="row">
+    <div class="col-md-3">
+        <ul>
+            <li>  <a [routerLink]="['./filho1']" routerLinkActive="active" >Filho 1</a></li>
+            <li>  <a [routerLink]="['./filho2']">Filho 2</a></li>
+        </ul>
+       
+    </div>
+    <div class="col-md-9">
+        <router-outlet></router-outlet>
+    </div>
+</div>
+<div [ngSwitch]="valor">
+    <div *ngSwitchCase="1">Valor é igual a 1</div>
+    <div *ngSwitchCase="2">Valor é igual a 2</div>
+    <div *ngSwitchDefault>Valor é diferente de 1 e 2</div>
+</div>
+
+<div 
+[ngStyle]="{'background-color': aplicaCSS ? 'blue' : 'red'}">
+Testando o CSS</div>
+<div [ngStyle]="{'background-color': corFundo,
+                'color' : aplicaCSS ? 'white' : 'black'}">
+    Exemplo 2</div>

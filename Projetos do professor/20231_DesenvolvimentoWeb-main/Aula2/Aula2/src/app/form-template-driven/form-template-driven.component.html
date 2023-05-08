@@ -1,0 +1,31 @@
+<div class="row">
+    <div class="col-md-12">
+        <form #form="ngForm" (ngSubmit)="salvar(form)">
+            <div class="mb-3">
+                <label for="nome" class="form-label">Nome</label>
+                <input name="nome" required [(ngModel)]="nome" class="form-control">
+                <div *ngIf="form.submitted && form.controls['nome'].errors">
+                    <div *ngIf="form.controls['nome'].errors['required']">Nome é obrigatório</div>
+                </div>  
+            </div>
+            <div class="mb-3">
+                <label for="idade" class="form-label">Idade</label>
+                <input name="idade" type="number" min="0" max="150" [(ngModel)]="idade" class="form-control">
+                <div *ngIf="form.submitted && form.controls['idade'].errors">
+                    <div *ngIf="form.controls['idade'].errors['min']">O valor mínimo é 0.</div>
+                    <div *ngIf="form.controls['idade'].errors['max']">O valor máximo é 150.</div>
+
+                </div>  
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label">E-mail</label>
+                <input name="email" required email [(ngModel)]="email" class="form-control">
+                <div *ngIf="form.submitted && form.controls['email'].errors">
+                    <div *ngIf="form.controls['email'].errors['required']">Email é obrigatório</div>
+                    <div *ngIf="form.controls['email'].errors['email']">E-mail é inválido</div>
+                </div>  
+            </div>
+            <button class="btn btn-primary" type="submit">Salvar</button>
+        </form>
+    </div>
+</div>

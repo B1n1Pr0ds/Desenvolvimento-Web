@@ -1,0 +1,31 @@
+<div class="row">
+    <div class="col-md-12">
+        <form [formGroup]="form" (ngSubmit)="salvar()">
+            <div class="mb-3">
+                <label for="nome" class="form-label">Nome</label>
+                <input formControlName="nome" type="text" class="form-control">
+                <div style="color: red;" *ngIf="form.get('nome').invalid && (form.get('nome').dirty || form.get('nome').touched)">
+                    <div *ngIf="form.get('nome').errors['required']">Nome é obrigatório</div>
+                  </div>            
+            </div>
+            <div class="mb-3">
+                <label for="idade" class="form-label">Idade</label>
+                <input formControlName="idade" type="number" class="form-control">
+                <div style="color: red;" *ngIf="form.get('idade').invalid && (form.get('idade').dirty || form.get('idade').touched)">
+                    <div *ngIf="form.get('idade').errors['min']">O valor mínimo é 0</div>
+                    <div *ngIf="form.get('idade').errors['max']">O valor máximo é 150</div>
+
+                  </div>            
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label">E-mail</label>
+                <input formControlName="email" type="email" class="form-control">
+                <div style="color: red;" *ngIf="form.get('email').invalid && (form.get('email').dirty || form.get('email').touched)">
+                    <div *ngIf="form.get('email').errors['required']">E-mail é obrigatório</div>
+                    <div *ngIf="form.get('email').errors['email']">E-mail não está no formato correto</div>
+                  </div>            
+            </div>
+            <button [disabled]="!form.valid" class="btn btn-primary" type="submit">Salvar</button>
+        </form>
+    </div>
+</div>

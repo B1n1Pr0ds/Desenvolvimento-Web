@@ -1,0 +1,33 @@
+<div class="row mt-3">
+    <div class="col-md-4">
+        <div class="card" >
+            <img src="https://picsum.photos/id/944/900/500" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Card title {{numero1}}</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <button (click)="numero1=numero1+1" [disabled]="desabilitaBotao" class="btn btn-primary">Go somewhere</button>
+              <input name="numero1" [(ngModel)]="numero1" type="number">
+            </div>
+          </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card" >
+            <img src="https://picsum.photos/id/944/900/500" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card" >
+            <img src="https://picsum.photos/id/944/900/500" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+    </div>    
+</div>
