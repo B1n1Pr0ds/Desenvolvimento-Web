@@ -1,23 +1,23 @@
 const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
-const usuarioController = require('./controllers/usuarioController');
-const postsController = require('./controllers/postsController');
-const comentariosController = require('./controllers/comentariosController');
+const InteressadoController = require('./controllers/InteressadoController');
+const cursoController = require('./controllers/cursoController');
 
 app.use(express.json());
 
-app.use('/usuarios', usuarioController);
-app.use('/posts', postsController);
-app.use('/comentarios', comentariosController);
+app.use('/Curso', cursoController);
+app.use('/Interesse', InteressadoController);
 
-mongoose.connect('mongodb+srv://<USUARIO>:<TOKEN>/?retryWrites=true&w=majority')
+const db_user = 'viniciusbotelho527';
+const db_pass = 'HTGfAnnxeuxlRITr';
+mongoose.connect(`mongodb+srv://${db_user}:${db_pass}@cluster0.2jdtnne.mongodb.net/?retryWrites=true&w=majority`)
     .then(() => {
-        app.listen(3000, () => {
-            console.log('Conectado ao mongoDB');
-            console.log('Servidor iniciado na porta 3000');
+        app.listen('3000', () => {
+            console.log('MongoDB conectado!!!')
+            console.log('Servidor iniciado na porta 3000!!!');
         })
-    })
-    .catch((err) => {
-        console.log(err);
+    }).catch((error) => {
+        console.log(error);
     });
+
